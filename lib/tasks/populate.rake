@@ -13,7 +13,7 @@ namespace :db do
 		  #Course.connection.execute('ALTER TABLE courses AUTO_INCREMENT = 0')
 	  	(1..number_of_records).each do |counter|
 	  		begin
-	  			random_name = word_list[rand(word_list.size - 1) + 1]
+	  			random_name = word_list[rand(word_list.size - 1)]
 	  			description_txt = "Lorem ipsum dolor sit amet, eius mattis suscipit."
 	  			Course.find_or_create_by_name(:name => random_name, :description => description_txt)
   			end while Course.find(:all).size < counter
